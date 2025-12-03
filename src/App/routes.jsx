@@ -1,5 +1,4 @@
 import App from "./App.jsx";
-
 const routes = [
   {
     path: "/",
