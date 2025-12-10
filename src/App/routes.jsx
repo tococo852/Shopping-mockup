@@ -1,8 +1,8 @@
-import App from "./App.jsx";
+import Home from "../components/HomePage/HomePage.jsx";
 const routes = [
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   }
 ];
 

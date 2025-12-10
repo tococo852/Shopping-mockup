@@ -1,6 +1,14 @@
+
+import styled from "styled-components";
+import "@radix-ui/themes/styles.css";
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
 const Footer =()=>{
     return <>
-            <div>
+            <Wrapper>
                 <div>
                    <p>contact:</p>
                    <p>+5690000000</p>
@@ -13,7 +21,7 @@ const Footer =()=>{
                     <p>by</p>
                     <p>luciano gitlink</p>
                 </div>
-            </div>
+            </Wrapper>
         </>
 }
 

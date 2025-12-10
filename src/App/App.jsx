@@ -1,15 +1,20 @@
 import { useState } from 'react'
+import routes from './routes'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import Footer from '../components/Footer/Footer'
+import Header from '../components/Header/Header'
 
 import './App.css'
 
+const router= createBrowserRouter(routes)
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>  
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <Header/>
+      <RouterProvider router={router} />
+      <Footer/>
         
     </>
   )
