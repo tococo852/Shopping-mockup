@@ -1,15 +1,23 @@
 
 import styled from "styled-components";
-import "@radix-ui/themes/styles.css";
+import { Box, Section} from "@radix-ui/themes";
 const Wrapper = styled.section`
-  padding: 4em;
   background: papayawhip;
 `;
 
 const Footer =()=>{
     return <>
-            <Wrapper>
-                <div>
+
+
+        <Box
+            py="3"
+            style={{ backgroundColor: "papayawhip", borderRadius: "var(--radius-3)" }}
+        >
+
+                <Section size="1" 
+                style={{ display: "flex", }}
+                > 
+                                 <div>
                    <p>contact:</p>
                    <p>+5690000000</p>
                 </div>
@@ -21,7 +29,9 @@ const Footer =()=>{
                     <p>by</p>
                     <p>luciano gitlink</p>
                 </div>
-            </Wrapper>
+                </Section>
+
+        </Box>
         </>
 }
 

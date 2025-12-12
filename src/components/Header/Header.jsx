@@ -1,6 +1,11 @@
+import styled from "styled-components";
+const Wrapper = styled.div`
+display: flex;
+justify-content: space-between;
+`;
+
 const Header =()=>{
-    return <>
-            <div>
+    return <Wrapper>
                 <div>
                     logo Place
                 </div>
@@ -13,8 +18,7 @@ const Header =()=>{
                 <div>
                     cart
                 </div>
-            </div>
-        </>
+        </Wrapper>
 }
 
 export default Header
