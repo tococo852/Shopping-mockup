@@ -15,9 +15,9 @@ const Footer =()=>{
         >
 
                 <Section size="1" 
-                style={{ display: "flex", }}
+                style={{ display: "flex", justifyContent:"center", gap:"3rem", fontSize:"0.8rem"}}
                 > 
-                                 <div>
+                <div>
                    <p>contact:</p>
                    <p>+5690000000</p>
                 </div>
