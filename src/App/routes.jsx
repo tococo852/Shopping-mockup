@@ -4,29 +4,35 @@ import ProductInfo from "../components/ProductInfo/ProductInfo.jsx";
 import CartCheckout from "../components/CartCheckout/CartCheckout.jsx";
 import App from "./App.jsx";
 import ErrorPage from "../components/ErrorPage/ErrorPage.jsx";
-import { Children } from "react";
+import { Navigate } from "react-router";
 const routes = [
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage/>,
-    Children: [
+    children: [
       {
-        path:'/home', element:<Home/>
+        index:true, 
+        element:<Navigate to="/home" replace/>
+      },
+      {
+        path:'/home', 
+        element:<Home/>
+      },
+      {
+        path: '/catalog',
+        element: <ProductCatalog/>
+      },
+      {
+        path: '/catalog/:productId',
+        element: <ProductInfo/>
+      },
+      {
+        path:'/checkout',
+        element: <CartCheckout/>
       }
+
     ]
-  },
-  {
-    path:"/product-catalog",
-    element: <ProductCatalog/>
-  },
-  {
-    path:"/product-catalog/productId",
-    element: <ProductInfo/>
-  },
-  {
-    path:"/card-checkout",
-    element: <CartCheckout/>
   }
   
   

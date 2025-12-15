@@ -19,22 +19,27 @@ const Header =()=>{
                 style={{ display: "flex", justifyContent:"space-between"}}
                 > 
                  <div>
-                    <Link to={`/`}> 
+                    <Link to={`/home`}> 
                         <>logo</>
 
                     </Link>
                 </div>
                 <Wrapper>
                     <div>
-                        <Link to={`/`}>
+                        <Link to={`/home`}>
                         <>home</>
                         </Link>
                 </div>
                 <div>
+                    <Link to={`/catalog`}>
                     products
+                    </Link>
+                    
                 </div>
                 <div>
+                    <Link to={`/checkout`}>
                     cart
+                    </Link>
                 </div>
 
                 </Wrapper>
