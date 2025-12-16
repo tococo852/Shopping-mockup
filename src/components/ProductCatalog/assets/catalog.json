@@ -1,0 +1,124 @@
+{
+  "inventory": [
+    {
+      "ID": 1,
+      "stock": 294,
+      "name": "object1",
+      "price": 132,
+      "measure": "units",
+      "quantity": 100,
+      "category": ["category4", "category2"],
+      "image_url": "https://via.placeholder.com/300?text=object1"
+    },
+    {
+      "ID": 2,
+      "stock": 18,
+      "name": "object2",
+      "price": 45,
+      "measure": "kg",
+      "quantity": 1,
+      "category": ["category1"],
+      "image_url": "https://via.placeholder.com/300?text=object2"
+    },
+    {
+      "ID": 3,
+      "stock": 76,
+      "name": "object3",
+      "price": 210,
+      "measure": "units",
+      "quantity": 1000,
+      "category": ["category3", "category5"],
+      "image_url": "https://via.placeholder.com/300?text=object3"
+    },
+    {
+      "ID": 4,
+      "stock": 0,
+      "name": "object4",
+      "price": 89,
+      "measure": "meters",
+      "quantity": 1,
+      "category": ["category6"],
+      "image_url": "https://via.placeholder.com/300?text=object4"
+    },
+    {
+      "ID": 5,
+      "stock": 42,
+      "name": "object5",
+      "price": 15,
+      "measure": "units",
+      "quantity": 10,
+      "category": ["category2", "category7", "category8"],
+      "image_url": "https://via.placeholder.com/300?text=object5"
+    },
+    {
+      "ID": 6,
+      "stock": 9,
+      "name": "object6",
+      "price": 560,
+      "measure": "kg",
+      "quantity": 5,
+      "category": ["category4", "category5"],
+      "image_url": "https://via.placeholder.com/300?text=object6"
+    },
+    {
+      "ID": 7,
+      "stock": 133,
+      "name": "object7",
+      "price": 32,
+      "measure": "units",
+      "quantity": 100,
+      "category": ["category1", "category3"],
+      "image_url": "https://via.placeholder.com/300?text=object7"
+    },
+    {
+      "ID": 8,
+      "stock": 61,
+      "name": "object8",
+      "price": 78,
+      "measure": "meters",
+      "quantity": 1,
+      "category": ["category8"],
+      "image_url": "https://via.placeholder.com/300?text=object8"
+    },
+    {
+      "ID": 9,
+      "stock": 27,
+      "name": "object9",
+      "price": 199,
+      "measure": "kg",
+      "quantity": 10,
+      "category": ["category6", "category2"],
+      "image_url": "https://via.placeholder.com/300?text=object9"
+    },
+    {
+      "ID": 10,
+      "stock": 5,
+      "name": "object10",
+      "price": 999,
+      "measure": "units",
+      "quantity": 1000,
+      "category": ["category7", "category5", "category4"],
+      "image_url": "https://via.placeholder.com/300?text=object10"
+    },
+    {
+      "ID": 11,
+      "stock": 88,
+      "name": "object11",
+      "price": 64,
+      "measure": "units",
+      "quantity": 100,
+      "category": ["category3"],
+      "image_url": "https://via.placeholder.com/300?text=object11"
+    },
+    {
+      "ID": 12,
+      "stock": 14,
+      "name": "object12",
+      "price": 120,
+      "measure": "kg",
+      "quantity": 1,
+      "category": ["category1", "category8"],
+      "image_url": "https://via.placeholder.com/300?text=object12"
+    }
+  ]
+}
