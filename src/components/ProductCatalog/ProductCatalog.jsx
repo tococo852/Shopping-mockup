@@ -1,23 +1,25 @@
 import CategorySidebar from "./components/CategorySidebar"
-import ProductCards from "./components/ProductCards"
+import { useState } from "react"
+import ProductDisplay from "./components/ProductDisplay"
 
 
 const ProductCatalog=()=>{
+    const [categoryFilter, setCategoryFilter] = useState([])
+    const [searchFilter, setSearchFilter]=useState('')
+
+
     return <div>
         <div>
-            sidebar here
-
-
-            <div>
-                categories here
-                should apply extra filters to search
-            </div>
+            <CategorySidebar 
+            categoryFilter={categoryFilter}
+            setCategoryFilter={setCategoryFilter}/>
         </div>
 
         <div>
-            product cards
-            <div> searchbar</div>
-            <div> jsx to print cards from data here</div>
+            <ProductDisplay
+            searchFilter={searchFilter}
+            setSearchFilter={setSearchFilter}
+            />
         </div>
         </div>
 }

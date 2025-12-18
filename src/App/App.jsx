@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
 import styled from 'styled-components'
 import { Theme } from "@radix-ui/themes";
 import { Outlet } from "react-router";
 import './App.css'
-
+import CartProvider from './context/cart/CartContextProvider';
 const Wrapper = styled.div`
 display: flex;
 flex-direction: column;
@@ -17,9 +16,10 @@ function App() {
   return (
     <Wrapper>  
       <Theme accentColor='amber' grayColor="sand" radius="large" scaling="95%">
-
-        <Header/>
-          <Outlet/>
+        <CartProvider>
+            <Header/>
+          < Outlet/>
+        </CartProvider>
         <Footer/>
       </Theme>
         

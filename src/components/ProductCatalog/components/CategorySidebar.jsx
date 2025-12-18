@@ -1,5 +1,23 @@
-const CategorySidebar=()=>{
-    return <></>
-}
+import catalog from '../assets/catalog.json'
+import { CheckboxGroup } from '@radix-ui/themes'
 
-export default CategorySidebar
+const CategorySidebar = ({ categoryFilter, setCategoryFilter }) => {
+    console.log(categoryFilter)
+  return (
+    <CheckboxGroup.Root
+      value={categoryFilter}
+      onValueChange={setCategoryFilter}
+    >
+      {catalog.categories.map(category => (
+        <CheckboxGroup.Item
+          key={category}
+          value={category}
+        >
+          {category}
+        </CheckboxGroup.Item>
+      ))}
+    </CheckboxGroup.Root>
+  );
+};
+
+export default CategorySidebar;
