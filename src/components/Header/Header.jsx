@@ -8,6 +8,7 @@ display: flex;
 justify-content: space-between;
 gap: 3rem;
 padding-right: 1rem;
+
 `;
 
 const Header =()=>{
