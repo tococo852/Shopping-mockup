@@ -6,7 +6,9 @@ import { Grid } from "@radix-ui/themes"
 const ProductDisplay=({searchFilter, setSearchFilter,categoryFilter })=>{
     const {cart, setCart} =useCart()
     return <>
-    <Grid columns="3" gap="3" rows="repeat(4, 8rem)" 
+    <input type="text" name="" id="" placeholder="Search Bar" value={searchFilter} onChange={(e)=>setSearchFilter(e.target.value)}/>
+    <div>{searchFilter}</div>
+    <Grid columns="3" gap="3" rows="repeat(auto, 8rem)" 
     width="auto" 
     overflowY={'scroll'}>
         {catalog.inventory.map(item=>(
