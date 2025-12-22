@@ -2,7 +2,7 @@ import { Card, Inset, Text} from "@radix-ui/themes"
 
 
 const ProductCard=({itemInfo})=>{
-    console.log(itemInfo)
+    //console.log(itemInfo)
     return <>
         <Card variant="surface">
             <img src="" alt="" style={{}} />
