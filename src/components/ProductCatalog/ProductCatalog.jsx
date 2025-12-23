@@ -3,23 +3,20 @@ import styled from "styled-components";
 import CategorySidebar from "./components/CategorySidebar";
 import ProductDisplay from "./components/ProductDisplay";
 
-// Container: Grid layout
 const CatalogLayout = styled.div`
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 1.5rem;
-  width: 100%;
-  min-height: 100%;
+  display: flex;
+  height: 100%;
+  flex: 1 0 100%;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 `;
 
-// Sidebar styling
 const Sidebar = styled.aside`
   border-right: 1px solid #ccc; 
   padding-right: 1rem;
+  flex: 0 0 15%;
 
   @media (max-width: 768px) {
     border-right: none;
@@ -27,9 +24,9 @@ const Sidebar = styled.aside`
   }
 `;
 
-// Content / Product area styling
 const Content = styled.main`
   padding-left: 1rem;
+  flex: 1 1 70%;
 
   @media (max-width: 768px) {
     padding-left: 0;
