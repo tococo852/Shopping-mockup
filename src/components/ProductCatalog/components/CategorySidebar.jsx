@@ -7,7 +7,14 @@ const CategorySidebar = ({ categoryFilter, setCategoryFilter }) => {
     <CheckboxGroup.Root
       value={categoryFilter}
       onValueChange={setCategoryFilter}
+      style={{
+        display:"flex",
+        gap:"1rem"
+
+      }}
     >
+      <div>Categories</div>
+
       {catalog.categories.map(category => (
         <CheckboxGroup.Item
           key={category}

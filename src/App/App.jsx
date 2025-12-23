@@ -13,13 +13,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Main = styled.main`
-flex: 1;
-display: flex;
-justify-content: center;
-align-items: stretch;
-min-height: 0;
-`;
 
 function App() {
   return (
@@ -27,9 +20,7 @@ function App() {
       <CartProvider>
         <Wrapper>
           <Header />
-          <Main>
-            <Outlet />
-          </Main>
+          <Outlet />
           <Footer />
         </Wrapper>
       </CartProvider>

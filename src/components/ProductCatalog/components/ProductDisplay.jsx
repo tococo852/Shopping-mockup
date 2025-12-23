@@ -25,11 +25,12 @@ const ProductDisplay=({searchFilter, setSearchFilter,categoryFilter })=>{
             <input type="text" name="" id="" placeholder="Search Bar" value={searchFilter} onChange={(e)=>setSearchFilter(e.target.value)}/>
 
         </div>
-    <Grid columns="3" gap="3" rows="repeat(auto, 8rem)" 
-    width="auto" 
+    <Grid gap="3" columns="repeat(3, max-content)" rows="repeat(4, max-content)"
     overflowY={'scroll'}
     style={{
-        flex: "1 0 70%"
+        flex: "1 0 70%",
+        justifyContent: "center",
+        alignContent: "center"
     }}>
         {pageItems.map(item=>(
             <ProductCard key= {item.ID} itemInfo={item}/>
@@ -41,7 +42,7 @@ const ProductDisplay=({searchFilter, setSearchFilter,categoryFilter })=>{
         &lt;
     </button>
     {Array.from({length :Math.ceil(filteredInventory.length/itemsPerPage)}).map((_,i)=>(
-         <button key={i} onClick={()=>{setCurrentPage(i+1)}}>{i+1}</button>
+         <button style={{color:(i+1)==currentPage?"blue":"inherit"}}key={i} onClick={()=>{setCurrentPage(i+1)}}>{i+1}</button>
     ))}
     <button onClick={()=>setCurrentPage((prev)=> Math.min(prev+1, Math.ceil(filteredInventory.length/itemsPerPage)))}>
         &gt;

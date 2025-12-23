@@ -6,7 +6,7 @@ import ProductDisplay from "./components/ProductDisplay";
 const CatalogLayout = styled.div`
   display: flex;
   height: 100%;
-  flex: 1 0 100%;
+  min-height: 70vh;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -16,7 +16,8 @@ const CatalogLayout = styled.div`
 const Sidebar = styled.aside`
   border-right: 1px solid #ccc; 
   padding-right: 1rem;
-  flex: 0 0 15%;
+  flex: 0 0 8%;
+  
 
   @media (max-width: 768px) {
     border-right: none;
@@ -39,7 +40,12 @@ const ProductCatalog = () => {
 
   return (
     <CatalogLayout>
-      <Sidebar>
+      <Sidebar
+            style={{
+        display:"flex",
+        justifyContent:"center",
+
+      }}>
         <CategorySidebar
           categoryFilter={categoryFilter}
           setCategoryFilter={setCategoryFilter}

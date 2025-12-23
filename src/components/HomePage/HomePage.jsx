@@ -4,7 +4,7 @@ const Home =() =>{
     //const [count, setCount] = useState(0)
 
   return (
-    <>  
+    <div>  
         <HomeCarrousel/>
 
         <div>
@@ -12,7 +12,7 @@ const Home =() =>{
           <p>we sell food containers for you</p>
         </div>
         
-    </>
+    </div>
   )
 }
 export default Home
