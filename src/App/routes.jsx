@@ -1,6 +1,6 @@
 import Home from "../components/HomePage/HomePage.jsx";
 import ProductCatalog from "../components/ProductCatalog/ProductCatalog.jsx";
-import ProductInfo from "../components/ProductInfo/ProductInfo.jsx";
+import ProductInfo from "../components/ProductCatalog/components/ProductInfo.jsx";
 import CartCheckout from "../components/CartCheckout/CartCheckout.jsx";
 import App from "./App.jsx";
 import ErrorPage from "../components/ErrorPage/ErrorPage.jsx";
