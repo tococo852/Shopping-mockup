@@ -1,7 +1,7 @@
-import { Card, Inset, Text} from "@radix-ui/themes"
+import { Card, IconButton, Inset, Text} from "@radix-ui/themes"
 import { Button } from "@radix-ui/themes"
-
 import { Link } from "react-router"
+import 	CartIcon from "../../../shared-assets/cart.svg?react"
 
 
 const ProductCard=({itemInfo})=>{
@@ -22,14 +22,28 @@ const ProductCard=({itemInfo})=>{
 			contains {itemInfo.quantity} {itemInfo.measure} 
 		</Text>
 
+		<div style={{
+			display:"flex",
+			gap:"5px",
+			justifyContent:"space-between"
+		}}>
+			
+
+			<IconButton variant="soft">
+				<CartIcon width={"1.2rem"}/>
+			</IconButton>
+
 			<Button size="2" variant="outline">
 				<Link to={`/catalog/${itemInfo.ID}`}
 				    style={{ color: "inherit", textDecoration: "none" }}
 					>
 
-					More Info
+					Details
 				</Link>
 			</Button>
+		</div>
+
+			
 	    </Card>
 
         </>
