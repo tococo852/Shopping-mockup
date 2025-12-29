@@ -5,7 +5,6 @@ import 	CartIcon from "../../../shared-assets/cart.svg?react"
 
 
 const ProductCard=({itemInfo})=>{
-    //console.log(itemInfo)
     return <>
         <Card variant="surface" style={{padding:"1.5rem"}}>
         <Text as="div" size="2" weight="bold">
