@@ -1,9 +1,11 @@
-import { Container,Box, Section, Flex,Button } from "@radix-ui/themes"
+import { Container,Box, Section, Flex,Button, Text } from "@radix-ui/themes"
 import { useNavigate } from "react-router"
 import useCart from "../../App/context/cart/useCart"
+import { useState } from "react"
 const CartAddPopUp=({ProductInfo, setDisplay})=>{
     const navigate=useNavigate()
-    const {cart, setCart} =useCart()
+    const { addToCart, removeFromCart} =useCart()
+    const [quantity, setQuantity]= useState(1)
     return <Container style={{
         position:"fixed", 
         zIndex:"1000", 
@@ -11,17 +13,41 @@ const CartAddPopUp=({ProductInfo, setDisplay})=>{
         inset:"0",
         display:"flex",
         justifyContent:"center"}}>
-            <Flex justify={"center"} align={"center"}>
+            <Flex justify={"center"} align={"center"} direction={"column"}> 
+                <Flex>
                 <Box>
-                
+                    <img src={ProductInfo.image_url} alt="" />
                 </Box>
 
+                <Text> {ProductInfo.name}</Text>
+
                 <Box>
-                    <Button onClick={()=>setDisplay(false)}>Continue Buying</Button>
                     <Button onClick={()=>{
-                        //more things happen
+                        setQuantity(prev=>Math.max(1, prev-1))
+                    }}>-</Button>
+                    <input type="number" min="1" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
+                    <Button onClick={()=>{
+                        setQuantity(prev=>prev+1)
+                    }}>+</Button>
+                </Box>
+
+                </Flex>
+
+                <Box>
+                    <Button onClick={()=>{
+                        addToCart(ProductInfo,Number(quantity))
+                        setDisplay(false)}}>
+                        Add and Continue Buying
+                    </Button>
+                    <Button onClick={()=>{
+                        addToCart(ProductInfo,Number(quantity))
                         navigate("/checkout")
-                        }}> Add to Cart And Checkout</Button>
+                        }}> Add And go to Checkout</Button>
+
+
+                        <Button onClick={()=>setDisplay(false)}> 
+                            close
+                        </Button>
                 </Box>
             </Flex>
         </Container>
