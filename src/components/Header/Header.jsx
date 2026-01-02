@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Box, Section} from "@radix-ui/themes";
-
+import CartLink from "./components/cartLink";
 import { Link } from "react-router";
 
 const Wrapper = styled.div`
@@ -38,9 +38,7 @@ const Header =()=>{
                     
                 </div>
                 <div>
-                    <Link to={`/checkout`}>
-                    cart
-                    </Link>
+                    <CartLink/>
                 </div>
 
                 </Wrapper>

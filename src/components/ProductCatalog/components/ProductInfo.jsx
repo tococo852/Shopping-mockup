@@ -9,20 +9,30 @@ import {
   Button,
   Card
 } from "@radix-ui/themes";
+import { useNavigate } from "react-router";
 
 import CartAddPopUp from "../../CartAddPopUp/CartAddPopUP";
 import { useState } from "react";
 const ProductInfo = () => {
+  const navigate=useNavigate()
   const { productId } = useParams();
   const product = catalog.inventory.find(
     item => item.ID === Number(productId)
   );
+  
   const [displayCartPopUp,setDisplayCartPopUp] = useState()
 
   return (
     <Container size="3" style={{ marginTop: "3rem"}}>
+      <Flex justify="start">
+    <Button onClick={() => navigate(-1)}>
+      Back
+    </Button>
+  </Flex>
       <Card size="5" style={{height:"55vh"}}>
+        
         <Flex gap="6" align="start">
+          
           {/* Image */}
           <Box style={{ flex: "1" }}>
             <img

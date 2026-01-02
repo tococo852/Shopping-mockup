@@ -2,9 +2,11 @@ import { Card, IconButton, Inset, Text} from "@radix-ui/themes"
 import { Button } from "@radix-ui/themes"
 import { Link } from "react-router"
 import 	CartIcon from "../../../shared-assets/cart.svg?react"
-
+import CartAddPopUp from "../../CartAddPopUp/CartAddPopUP"
+import { useState } from "react"
 
 const ProductCard=({itemInfo})=>{
+	const [cartDisplay, setCartDisplay]=useState(false)
     return <>
         <Card variant="surface" style={{padding:"1.5rem"}}>
         <Text as="div" size="2" weight="bold">
@@ -28,7 +30,7 @@ const ProductCard=({itemInfo})=>{
 		}}>
 			
 
-			<IconButton variant="soft">
+			<IconButton variant="soft" onClick={()=>{setCartDisplay(true)}}>
 				<CartIcon width={"1.2rem"}/>
 			</IconButton>
 
@@ -44,7 +46,7 @@ const ProductCard=({itemInfo})=>{
 
 			
 	    </Card>
-
+		{cartDisplay && <CartAddPopUp ProductInfo={itemInfo} setDisplay={setCartDisplay}/>}
         </>
 }
 export default ProductCard

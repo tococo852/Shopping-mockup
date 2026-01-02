@@ -4,7 +4,7 @@ import useCart from "../../App/context/cart/useCart"
 import { useState } from "react"
 const CartAddPopUp=({ProductInfo, setDisplay})=>{
     const navigate=useNavigate()
-    const { addToCart, removeFromCart} =useCart()
+    const { addToCart} =useCart()
     const [quantity, setQuantity]= useState(1)
     return <Container style={{
         position:"fixed", 
@@ -25,7 +25,7 @@ const CartAddPopUp=({ProductInfo, setDisplay})=>{
                     <Button onClick={()=>{
                         setQuantity(prev=>Math.max(1, prev-1))
                     }}>-</Button>
-                    <input type="number" min="1" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
+                    <input type="number"  value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
                     <Button onClick={()=>{
                         setQuantity(prev=>prev+1)
                     }}>+</Button>

@@ -2,11 +2,15 @@ import {  useEffect, useState } from "react";
 import CartContext from "./cart.context";
 
 const CartProvider=({children})=>{
+    const [cartQuantity, setCartQuantity] = useState(0)
     const [cart, setCart]=useState({})
     useEffect(()=>{displayCart()},[cart])
+    useEffect(()=>{displayCart()},[cartQuantity])
 
     const addToCart=(item, quantity)=>{
         const id= String(item.ID)
+        console.log(quantity)
+        setCartQuantity(prev=>prev+quantity)
         setCart (prev=>{
             const currItem=prev[id]
             return currItem?{
@@ -28,6 +32,7 @@ const CartProvider=({children})=>{
     }
     const removeFromCart=(item, quantity)=>{
         const id= String(item.ID)
+        setCartQuantity(prev=>Math.max(0, prev-quantity))
         setCart (prev=>{
             const currItem=prev[id]
             //exception, for some reason this function was somehow called when item is missing from cart
@@ -56,10 +61,11 @@ const CartProvider=({children})=>{
     }
 
     const displayCart=()=>{
+        console.log(cartQuantity)
         console.log(cart)
     }
     return (
-    <CartContext.Provider value={{cart,addToCart, removeFromCart, emptyCart, displayCart}}>
+    <CartContext.Provider value={{cartQuantity,cart,addToCart, removeFromCart, emptyCart, displayCart}}>
         {children}
     </CartContext.Provider>
     )
