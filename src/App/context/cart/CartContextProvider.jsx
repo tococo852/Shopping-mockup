@@ -58,13 +58,16 @@ const CartProvider=({children})=>{
     const emptyCart=()=>{
             setCart({})
     }
+    const cartValue=()=>{
+        return Object.values(cart).reduce((sum,{item,quantity})=>sum+ item.price*quantity,0)
+    }
 
     const displayCart=()=>{
         console.log(cartQuantity)
         console.log(cart)
     }
     return (
-    <CartContext.Provider value={{cartQuantity,cart,addToCart, removeFromCart, emptyCart, displayCart}}>
+    <CartContext.Provider value={{cartQuantity,cart,addToCart, removeFromCart, emptyCart, displayCart, cartValue}}>
         {children}
     </CartContext.Provider>
     )

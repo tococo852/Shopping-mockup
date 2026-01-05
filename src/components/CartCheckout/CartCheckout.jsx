@@ -10,17 +10,24 @@ import {
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import useCart from "../../App/context/cart/useCart";
 const CartCheckout=()=>{
-    const {cart,removeFromCart, addToCart,emptyCart}= useCart()
+    const {cart,removeFromCart, addToCart,emptyCart, cartValue}= useCart()
     return <Container>
+        <Flex>
+
       <ShoppingCart/>
-      <Flex>
         <Box>
-
-        </Box>
-
-        <Button>
+            <Text>
+            Total Price
+            </Text>
+            <Box>
+                $ {cartValue()}
+            </Box>
+        <Button onClick={()=>emptyCart()}>
           Checkout
         </Button>
+        </Box>
+
+        
       </Flex>
     </Container>
 }
