@@ -9,7 +9,6 @@ const CartProvider=({children})=>{
 
     const addToCart=(item, quantity)=>{
         const id= String(item.ID)
-        console.log(quantity)
         setCartQuantity(prev=>prev+quantity)
         setCart (prev=>{
             const currItem=prev[id]
