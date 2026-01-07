@@ -10,9 +10,9 @@ import {
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import useCart from "../../App/context/cart/useCart";
 const CartCheckout=()=>{
-    const {cart,removeFromCart, addToCart,emptyCart, cartValue}= useCart()
-    return <Container>
-        <Flex>
+    const {emptyCart, cartValue}= useCart()
+    return <Container align={"center"}>
+        <Flex justify={"center"} gap={"10rem"}>
 
       <ShoppingCart/>
         <Box>

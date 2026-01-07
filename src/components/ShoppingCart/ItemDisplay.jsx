@@ -8,7 +8,7 @@ import {
   Card
 } from "@radix-ui/themes";
 
-const ItemDisplay =({itemInfo, quantity, add, clear})=>{
+const ItemDisplay =({itemInfo, quantity, add, clear,reduce})=>{
 
     return <Card>
         <Box>
@@ -17,9 +17,11 @@ const ItemDisplay =({itemInfo, quantity, add, clear})=>{
         <Flex>
             <Text>{itemInfo.name}</Text>
             <Box>
-                <Button onClick={()=>clear()}>X</Button>
+                <Button onClick={()=>reduce()}>-</Button>
                 <Text>{quantity}</Text>
                 <Button onClick={()=>add()}>+</Button>
+                <Button onClick={()=>clear()}>X</Button>
+
             </Box>
             <Text>total: {itemInfo.price*quantity}</Text>
         </Flex>

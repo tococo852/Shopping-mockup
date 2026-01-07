@@ -14,7 +14,7 @@ const ShoppingCart=()=>{
     const {cart,removeFromCart, addToCart,emptyCart}= useCart()
     return <Flex direction={"column"}>
         {Object.values(cart).map(cartItem=>{
-          return <ItemDisplay itemInfo={cartItem.item} quantity={cartItem.quantity} add={()=>addToCart(cartItem.item, 1)} clear={()=>emptyCart()} />
+          return <ItemDisplay itemInfo={cartItem.item} quantity={cartItem.quantity} add={()=>addToCart(cartItem.item, 1)} clear={()=>removeFromCart(cartItem.item,cartItem.quantity) } reduce={()=>removeFromCart(cartItem.item, 1)} />
         })}
       </Flex>
 }
