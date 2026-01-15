@@ -22,12 +22,22 @@ const CartLink=()=>{
 
         
     `
+    const CartNavLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
     //`${cartQuantity?'#18d618':'inherit'}`
     const {cartQuantity} = useCart()
     return <div style={{position:"relative", display:"inline-block"}}>
-            <Link to={`/checkout`}>
+            <CartNavLink to={`/checkout`}>
                     cart
-            </Link>
+            </CartNavLink>
             {cartQuantity>0 && (
                 <CartWrap >
                     {cartQuantity}
